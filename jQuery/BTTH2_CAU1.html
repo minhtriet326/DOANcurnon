@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <title>Document</title>
+    <script>
+        $(document).ready(function(){
+            $("button").click(function(){
+                n=$(".aa").val()
+                m=$(".bb").val()
+                kq=parseInt(n) * parseFloat(m)
+                $(".cc").val(Math.round(kq*100000)/100000)
+            })
+        })
+    </script>
+</head>
+<body>
+    <table border="1">
+        <tr>
+            <td>Lương</td>
+            <td><input class="aa" type="text"></td>
+        </tr>
+        <tr>
+            <td>Hệ số lương</td>
+            <td><input class="bb" type="number"></td>
+        </tr>
+        <tr colspan="1">
+            <td><button>Tính lương tháng</button></td>
+        </tr>
+        <tr>
+            <td>Lương tháng</td>
+            <td><input class="cc" type="text"></td>
+        </tr>
+    </table>
+</body>
+</html>

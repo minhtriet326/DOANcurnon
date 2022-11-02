@@ -1,0 +1,62 @@
+.slide-container {
+    width: 560px;
+    height: 400px;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+.slider {
+    width: 798px;
+    height: 350px;
+    border: 1px solid #ddd;
+    margin-top: 10px;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    overflow: hidden;
+}
+.slider .thumbs {
+    position: relative;
+    height: 450px;
+    width: 1950px;
+    counter-reset: subsection;
+    transition: transform 2s;
+}
+.slider .thumbs div {
+    width: 380px;
+    height: 330px;
+    box-shadow: 0 0 4px rgba(0, 0, 0, .12), 0 4px 4px rgba(0, 0, 0, .1);
+    margin: 10px;
+    border-radius: 3px;
+    float: left;
+    position: relative;
+    transition: all 2s;
+}
+.thumbs .first {
+    background-image: url(./assets/img/details/kashmir-calm/2_1_2_.webp);
+    background-size: cover;
+    background-position: 50% 50%;
+}
+.slider .thumbs.move .first {
+    background-position: 20% 50% !important;
+}
+.next, .prev {
+    top: 50%;
+    position: absolute;
+    border-radius: 50%;
+    border: none;
+    width: 50px;
+    height: 50px;
+    left: 0;
+    color: #fff;
+    transition: all .3s;
+}
+.next {
+    left: calc(100% + 123px)
+}
+
+.prev {
+    left: calc(-31%)
+}

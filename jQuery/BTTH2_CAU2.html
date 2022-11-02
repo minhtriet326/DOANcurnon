@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $(".tinhtien_btn").click(function(){
+                //mon an
+                var ten = [];
+                var gia = [];
+                $.each($(".monan option:selected"), function(){
+                    ten.push($(this).text());
+                    gia.push($(this).val());
+                })
+                $.each($(".nuocuong option:selected"), function(){
+                    ten.push($(this).text());
+                    gia.push($(this).val());
+                })
+                // alert(typeof gia[0])
+                var thoidiem = $('input[type="radio"].thoidiem:checked').val();
+                var str = '<table border="1" cellspacing="0"><thead><th>Các món đã dùng</th><th>Tiền</th></thead>';
+                var tongtien = 0;
+                for(var i = 0; i<ten.length; i++) {
+                    str += "<tr><td>" + ten[i] + "</td>"
+                    str += "<td>" + gia[i] + "</td>"+"</tr>";
+                    tongtien += parseFloat(gia[i]);
+                }
+                tongtien += tongtien*parseFloat(thoidiem);
+                str_tongtien = '<tr><th>Tổng tiền</th><td>' + tongtien.toString() + ' đồng</td></tr>';
+                str_thoidiem = '<tr><th>Phụ thu</th><td>' + (thoidiem*100).toString() + ' %</td></tr>';
+                str += str_thoidiem + str_tongtien + '</table>';
+                // alert(str);
+                $("div").html(str);
+        })
+    });
+    </script>
+    <title>Bai2_BTTH2</title>
+</head>
+<body>
+        <table border="1" cellspacing="0" size="460px">
+            <tr>
+                <th colspan="3" align="center"><h1>Thực đơn</h1></th>
+            </tr>
+            <tr>
+                <th>Thức ăn</th>
+                <th>Nước uống</th>
+                <th>Thời điểm</th>
+            </tr>
+            <tr>
+                <td>
+                    <select size="7" class="monan" multiple>
+                        <option value="20000">Bún bò</option>
+                        <option value="18000">Hủ tiếu</option>
+                        <option value="17000">Bánh canh</option>
+                        <option value="19000">Phở bò</option>
+                        <option value="15000">Nuôi</option>
+                        <option value="12000">Bánh mì thịt</option>
+                        <option value="15000">Bánh cuốn</option>
+                    </select>
+                </td>
+                <td>
+                    <select size="7" class="nuocuong" multiple>
+                        <option value="12000">Cà phê đá</option>
+                        <option value="15000">Cà phê sữa</option>
+                        <option value="13000">Chanh dây</option>
+                        <option value="12000">Chanh muối</option>
+                        <option value="14000">Xí muội</option>
+                        <option value="13000">Sữa tươi</option>
+                        <option value="17000">Cam vắt</option>
+                    </select>
+                </td>
+                <td >
+                    <input type="radio" name= "banngay" class="thoidiem" value="0">Ban ngày 
+                    <br>
+                    <input type="radio" name="bandem" class="thoidiem" value="0.1">Ban đêm
+                </td>
+            </tr>
+            <tr>
+                <td colspan="3" align="center">
+                    <button class="tinhtien_btn">Tính tiền</button>
+                </td>
+            </tr>
+        </table>
+    <br>
+        <div class="thanhtien">    
+        </div>
+</body>
+</html>

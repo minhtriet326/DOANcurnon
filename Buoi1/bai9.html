@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        body {
+            text-align: center;
+        }
+        h2 {
+            font-weight: 400;
+        }
+        hr {
+            margin: 16px 0 8px;
+            border: 1px solid #0000FF;
+            border-style: inset;
+            width: 100%;
+        }
+        form {
+            margin: 0 auto;
+            width: 300px;
+        }
+        table {
+            table-layout: fixed;
+            width: 300px;
+        }
+        input {
+            color: rgba(168, 148, 148, 0.801);
+            border: 1px solid #ccc;
+        }
+        button {
+            border: 2px solid rgba(0, 0, 0, 0.349);
+            border-radius: 10px;
+            padding: 3px 5px 0;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <form action="">
+        <h2>Đăng nhập hệ thống</h2>
+        <hr>
+        <table>
+            <caption align="bottom"><i>DANH SÁCH SINH VIÊN</i></caption>
+            <tr>
+                <td>Tên đăng nhập</td>
+                <td><input type="text" value="nhập tên"></td>
+            </tr>
+            <tr>
+                <td>Mật khẩu</td>
+                <td><input type="text" value="nhập mã số"></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td><button>Đăng nhập</button></td>
+            </tr>
+        </table>
+        <hr>
+    </form>
+</body>
+</html>

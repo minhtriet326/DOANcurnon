@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        body {
+            display: flex;
+        }
+        img {
+            min-width: 10%;
+            flex: 1;
+        }
+        div {
+            flex: 2;
+        }
+        div h1 {
+            color: rgba(212, 0, 255, 0.582);
+            text-align: center;
+            margin: 30px 0;
+        }
+        table {
+            border-collapse: collapse;
+            background-color: #FFFFFF;
+        }
+        th {
+            color: #FFFFFF;
+        }
+        td, th {
+            border: 1px solid #000; 
+            padding: 5px;
+        }
+        .bgcolor {
+            background-color: #FFEDCA;
+        }
+        td:first-child, th:first-child {
+            text-align: center;
+        }
+        td:last-child {
+            padding-right: 725px;
+        } 
+    </style>
+</head>
+<body class="bgcolor">
+    <img src="https://cdn.pixabay.com/photo/2021/11/02/07/35/pumpkin-soup-6762603__340.png" alt="">
+    <div>
+        <h1>Các món ăn</h1>
+        <table>
+            <thead style="background-color: #CC6600">
+                <th><b>STT</b></th>
+                <th><b>Tên món ăn</b></th>
+            </thead>
+
+            <tbody>
+                <tr>
+                    <td>1.</td>
+                    <td>Bánh mỳ</td>
+                </tr>
+                <tr class="bgcolor">
+                    <td>2.</td>
+                    <td>Bánh xèo</td>
+                </tr>
+                <tr>
+                    <td>3.</td>
+                    <td>Bánh cuốn</td>
+                </tr>
+                <tr class="bgcolor">
+                    <td>4.</td>
+                    <td>Phở</td>
+                </tr>
+                <tr>
+                    <td>5.</td>
+                    <td>Bún bò</td>
+                </tr>
+                <tr class="bgcolor">
+                    <td>6.</td>
+                    <td>Cháo lòng</td>
+                </tr>
+                <tr>
+                    <td>7.</td>
+                    <td>Bún thịt nướng</td>
+                </tr>
+                <tr class="bgcolor">
+                    <td>8.</td>
+                    <td>Cơm tấm</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>

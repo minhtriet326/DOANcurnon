@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./mau.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <!-- <link rel="stylesheet" href="./mau.js"> -->
+    <title>Document</title>
+</head>
+<body>
+    <div class="slide-container">
+        <button class="prev">Prev</button>
+        <button class="next">Next</button>
+        <div class="slider">
+            <div class="thumbs">
+                <div class="first" number="0" ></div>
+                <div class="first" number="1" ></div>
+                <div class="first" number="2" ></div>
+            </div>
+        </div>
+    </div>
+    <script>
+        $(function() {
+            var elemCount = 3;
+            var current = 1;
+            var elemWidth = 400;
+            var move = 0;
+            $('.next').click(function(){
+                if (current < elemCount) {
+                    $('.slider .thumbs').toggleClass('move');
+                    move += elemWidth;
+                    console.log(move)
+                    $('.slider .thumbs').css('transform', 'translateX(-'+move+'px)');
+                    current++;
+                    }
+                })
+            $('.prev').click(function(){
+                if(current > 0) {
+                    $('.slider .thumbs').toggleClass('move');
+                    move -= elemWidth;
+                    current--;
+                    $('.slider .thumbs').css('transform', 'translateX(-'+move+'px)');
+                }
+            })
+        });
+    </script>
+</body>
+</html>

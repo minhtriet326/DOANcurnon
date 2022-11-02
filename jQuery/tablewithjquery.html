@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script>
+        $(document).ready(function(){
+            $(".them").click(function(){
+                tenmon = $(".nuocuong").val();
+                //alert(tenmon);
+                flag=false;
+                $(".bill").find("tr").each(function(){
+                    if($(this).find("td").eq(0).html()===tenmon)
+                    {    
+                        sl=parseInt($(this).find("td").eq(1).html());
+                        sl++;
+                        $(this).find("td").eq(1).html(sl);
+                        
+                        tien=parseFloat($(this).find("td").eq(2).html())*sl;
+                        $(this).find("td").eq(2).html(tien);
+                        flag=true;
+                        
+                    }
+                    
+                });
+                
+                if(flag==false) //tìm không thấy 
+                {
+                        str="<tr><td>"+tenmon+"</td>";
+                        str+="<td>1</td><td>20000</td></tr>";
+                        $(".bill").append(str);
+                }
+                
+            });
+            
+            $(".tinhtien").click(function(){
+                tongtien=0;
+                $(".bill").find("tr").each(function(){
+                    tongtien += parseFloat($(this).find("td").eq(2).html());    
+                });
+                
+                $(".tientra").html(tongtien);
+                //alert(tongtien);
+            });
+        });
+</script>
+    </head>
+    <body>
+        Nước uống<input type="text" class="nuocuong"></input> <br><br>
+        <button class="them">Thêm</button>
+        <table class="bill" border="1">
+            <tr>
+                <td>Cam vắt</td>
+                <td>1</td>
+                <td>20000</td>
+            </tr>
+            <tr>
+                <td>Cafe</td>
+                <td>1</td>
+                <td>15000</td>
+            </tr>
+        </table>
+        <br>
+        <button class="tinhtien"> Tính tiền</button><br>
+        <div class="tientra"></div>
+    </body>
+</html>
